@@ -19,7 +19,7 @@ public class bankdomain {
                transaksi t4 = new transaksi("Tr004", 150000, 30000, 180000, "23-04-2024", "Kredit", new bank[]{trs4});
                transaksi t5 = new transaksi("Tr005", 500000, 200000, 700000, "23-04-2024", "Kredit", new bank[]{trs5}); // sesuai gambar
        
-               // Masukkan transaksi ke service
+               
                serviceTransaksi.Transaksi[0] = t1;
                serviceTransaksi.Transaksi[1] = t2;
                serviceTransaksi.Transaksi[2] = t3;
