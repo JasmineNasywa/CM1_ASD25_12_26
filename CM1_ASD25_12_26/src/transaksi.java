@@ -33,4 +33,8 @@ public class transaksi {
         System.out.println("---------------------");
     }
 
+    public transaksi(){
+        
+    }
+
 }
