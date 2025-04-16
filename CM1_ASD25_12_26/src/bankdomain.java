@@ -57,16 +57,17 @@ public class bankdomain {
                     break;
                     
                 case 3:
-                    
+                System.out.print("Masukkan No Rekening yang dicari: ");
+                String cariNorek = sc.nextLine();
+                serviceTransaksi.searchByNoRekening(cariNorek);
                     break;
                     
                 case 4:
-                    
+                    serviceTransaksi.findMaxSaldo();
                     break;
                     
                 case 5:
-                  serviceTransaksi.sortingByNoRekening();  
-                  serviceTransaksi.sorting();
+                  serviceTransaksi.sortingBydebitkredit();
                     break;
                     
                     

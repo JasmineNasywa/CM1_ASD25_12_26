@@ -37,16 +37,41 @@ public class serviceTransaksi {
             }
         }
     }
-    public double findMaxSaldo() {
-        double maxSaldo = Double.MIN_VALUE;
-        for (transaksi transaksi : Transaksi) {
-            if (transaksi != null && transaksi.finalSaldo > maxSaldo) {
-                maxSaldo = transaksi.finalSaldo;
+    public void findMaxSaldo() {
+        if (Transaksi == null || Transaksi.length == 0) {
+            System.out.println("Data transaksi kosong.");
+            return;
+        }
+    
+        transaksi maxTransaksi = null;
+    
+        for (transaksi tr : Transaksi) {
+            if (tr != null) {
+                if (maxTransaksi == null || tr.finalSaldo > maxTransaksi.finalSaldo) {
+                    maxTransaksi = tr;
+                }
             }
         }
-        return maxSaldo;
+    
+        if (maxTransaksi != null) {
+            System.out.println("Menampilkan Transaksi dengan Saldo Maksimum");
+            System.out.println("======================================================================================");
+            System.out.printf("| %-10s | %-15s | %-15s | %-15s | %-10s |\n", 
+                              "Kode", "Nama", "No Rekening", "Final Saldo", "Tanggal");
+            System.out.println("--------------------------------------------------------------------------------------");
+            System.out.printf("| %-10s | %-15s | %-15s | %-15.2f | %-10s |\n", 
+                              maxTransaksi.kodeTransaksi, 
+                              maxTransaksi.bankAcc[0].nama, 
+                              maxTransaksi.bankAcc[0].noRekening, 
+                              maxTransaksi.finalSaldo, 
+                              maxTransaksi.tanggalTransaksi);
+            System.out.println("======================================================================================");
+        } else {
+            System.out.println("Tidak ada transaksi yang ditemukan.");
+        }
     }
-    public void sorting() { 
+    
+    public void sortingBydebitkredit() {
         for (int i = 0; i < idx - 1; i++) {
             for (int j = 0; j < idx - i - 1; j++) {
                 if (Transaksi[j].inOutSaldo > Transaksi[j + 1].inOutSaldo) {
@@ -56,44 +81,19 @@ public class serviceTransaksi {
                 }
             }
         }
+
+        
         System.out.println("Menampilkan Data Transaksi setelah Sorting (berdasarkan No Rekening):");
     System.out.println("==================================================================================");
     System.out.printf("| %-10s | %-15s | %-15s | %-15s |\n", 
-                      "Kode", "Nama", "In/Out Saldo", "Tanggal");
+                      "Kode", "Nama", "Debit/Kredit", "Tanggal");
     System.out.println("----------------------------------------------------------------------------------");
-
-    for (transaksi tr : Transaksi) {
-        if (tr != null) {
-            System.out.printf("| %-10s | %-15s | %-15.2f | %-15s |\n",
-                              tr.kodeTransaksi, tr.bankAcc[0].nama, tr.inOutSaldo, tr.tanggalTransaksi);
-        }
-    }
-    System.out.println("==================================================================================");
-    }
-
-    public void sortingByNoRekening() {
-        for (int i = 0; i < idx - 1; i++) {
-            for (int j = 0; j < idx - i - 1; j++) {
-                
-                if (Transaksi[j].bankAcc[0].noRekening.compareTo(Transaksi[j + 1].bankAcc[0].noRekening) > 0) {
-                    transaksi temp = Transaksi[j];
-                    Transaksi[j] = Transaksi[j + 1];
-                    Transaksi[j + 1] = temp;
-                }
+        for (transaksi tr : Transaksi) {
+            if (tr != null) {
+                System.out.printf("| %-15s | %-15s | %-15.2f | %-15s |\n",
+                                  tr.bankAcc[0].noRekening, tr.bankAcc[0].nama, tr.inOutSaldo, tr.tanggalTransaksi);
             }
         }
-        System.out.println("Menampilkan Data Transaksi setelah Sorting (berdasarkan No Rekening):");
-    System.out.println("==================================================================================");
-    System.out.printf("| %-10s | %-15s | %-15s | %-15s |\n", 
-                      "Kode", "Nama", "In/Out Saldo", "Tanggal");
-    System.out.println("----------------------------------------------------------------------------------");
-
-    for (transaksi tr : Transaksi) {
-        if (tr != null) {
-            System.out.printf("| %-10s | %-15s | %-15.2f | %-15s |\n",
-                              tr.kodeTransaksi, tr.bankAcc[0].nama, tr.inOutSaldo, tr.tanggalTransaksi);
-        }
-    }
-    System.out.println("==================================================================================");
+        System.out.println("==================================================================================");
     }
 }
