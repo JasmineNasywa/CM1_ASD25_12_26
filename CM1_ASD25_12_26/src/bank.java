@@ -13,7 +13,8 @@ public class bank {
         this.email =email;
     }
     public void tampil() {
-        System.out.println("NoRekening " + "\t" + noRekening + "Nama: " + "\t" + nama + "Nama Ibu: " + "\t" + namaIbu + "NoHP: " + "\t" + noHp + "email" + "/t" + email);
+        System.out.println("NoRekening " + "\t" + noRekening + "Nama: " + "\t" + nama + "Nama Ibu: " + "\t" + namaIbu + "NoHP: " + 
+        "\t" + noHp + "email" + "/t" + email);
         System.out.println("---------------------");
     }
 
