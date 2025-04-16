@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class bankdomain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        serviceTransaksi bank = serviceTransaksi(5);
+
         while (true) {
             System.out.println("==================POLINEMA BANK==================");
             System.out.println("\nBankMenu:");
@@ -49,5 +51,10 @@ public class bankdomain {
                     System.out.println("Pilihan tidak valid!");
             }
         }
+    }
+
+    private static serviceTransaksi serviceTransaksi(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'serviceTransaksi'");
     }
 }
