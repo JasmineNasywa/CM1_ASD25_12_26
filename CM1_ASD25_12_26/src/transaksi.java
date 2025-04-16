@@ -22,7 +22,7 @@ public class transaksi {
     public void tampilTransaksi(){ //ini belum sebaris kesamping, masih kebawah
         System.out.println("Kode Transaksi: " + kodeTransaksi);
         System.out.println("Saldo: " + saldo);
-        System.out.println("In/Out Saldo: " + inOutSaldo);
+        System.out.println("Debit/Kredit: " + inOutSaldo);
         System.out.println("Final Saldo: " + finalSaldo);
         System.out.println("Tanggal Transaksi: " + tanggalTransaksi);
         System.out.println("Type: " + type);
@@ -34,7 +34,7 @@ public class transaksi {
     }
 
     public transaksi(){
-        
+
     }
 
 }
