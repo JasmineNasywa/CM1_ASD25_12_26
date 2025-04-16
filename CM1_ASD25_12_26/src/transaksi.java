@@ -19,7 +19,7 @@ public class transaksi {
         this.bankAcc = bankAcc;
     }
 
-    public void tampilTransaksi(){
+    public void tampilTransaksi(){ //ini belum sebaris kesamping, masih kebawah
         System.out.println("Kode Transaksi: " + kodeTransaksi);
         System.out.println("Saldo: " + saldo);
         System.out.println("In/Out Saldo: " + inOutSaldo);
